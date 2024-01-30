@@ -1,21 +1,33 @@
 /// <reference types="Cypress" />
 
+import{Navigation} from "../pages/homePage";
+import { GoitPage } from "../pages/loginPage";
+
+const navigate = new Navigation()
+const goitPage = new GoitPage()
+
 describe("Test 1-(Log in/out)", () => {
 
-    it("Log in, Log out user", () => {
+    it("LogIn, LogOut user 1", () => {
 
-      cy.visit("https://www.edu.goit.global/account/login");
-      
-      cy.get("#user_email").type("user888@gmail.com");
-      cy.get("#user_password").type("1234567890");
-      
-      cy.contains('button','Log in').click()
+      goitPage.openLoginPage()
+      cy.login("user888@gmail.com","1234567890")
 
-      cy.get('button#open-navigation-menu-mobile').click()
+      navigate.logInButton.click()
 
-      cy.contains('button','Log out').click()
+      navigate.hamburgerMenu.click()
+
+      navigate.logOutButton.click()
 
     });
   });
+    
+
+
+      
+
+
+      
+
       
    
