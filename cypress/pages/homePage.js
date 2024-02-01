@@ -1,4 +1,4 @@
-export class Navigation {
+export class HomePage {
     get logInButton() {
         return cy.contains('button','Log in')
 

@@ -1,11 +1,11 @@
 /// <reference types="Cypress" />
 
-import{Navigation} from "../pages/homePage";
-import { GoitPage, userData } from "../pages/loginPage";
+import{HomePage} from "../pages/homePage";
+import { LoginPage, userData } from "../pages/loginPage";
 
 
-const navigate = new Navigation()
-const goitPage = new GoitPage()
+const navigate = new HomePage()
+const goitPage = new LoginPage()
 const user = new userData
 
 describe("Test Log in/out)", () => {
