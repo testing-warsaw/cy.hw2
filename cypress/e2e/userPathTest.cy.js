@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 import{HomePage} from "../pages/homePage";
-import { LoginPage, userData } from "../pages/loginPage";
+import { LoginPage } from "../pages/loginPage";
 
 
 const homePage = new HomePage()
@@ -18,7 +18,7 @@ describe("Test Log in/out)", () => {
 
       homePage.logInButton.click()
 
-      homePage.hamburgerMenu.click()
+      homePage.openMenu.click()
 
       homePage.logOutButton.click()
 
@@ -32,7 +32,7 @@ describe("Test Log in/out)", () => {
 
       homePage.logInButton.click()
 
-      homePage.hamburgerMenu.click()
+      homePage.openMenu.click()
       
       homePage.logOutButton.click()
      

@@ -7,7 +7,7 @@ export class HomePage {
         return cy.contains('button','Log out')
 
     }
-    get hamburgerMenu() {
+    get openMenu() {
         return cy.get('button#open-navigation-menu-mobile')
 
     }
