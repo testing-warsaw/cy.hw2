@@ -3,20 +3,28 @@ export class LoginPage {
     openLoginPage() {
       cy.visit("https://www.edu.goit.global/account/login");
     }
-    
+
+    loginUser1() {
+      cy.login("user888@gmail.com", "1234567890")
+    }
+
+    loginUser2() {
+      cy.login("testowyqa@qa.team", "QA!automation-1")
+    }
+
       }
+
+
+
+
+
+
+
+
+
+
+
   
-      export class userData {
-    
-        //User1
-         login1 = "user888@gmail.com"
-         password1 = "1234567890"
-    
-         //User2
-         login2 = "testowyqa@qa.team"
-         password2 = "QA!automation-1"
-    
-        }
   
   
   
