@@ -16,11 +16,11 @@ describe("Test Log in/out)", () => {
 
       loginPage.loginUser1()
 
-      homePage.logInButton.click()
+      homePage.logIn.click()
 
       homePage.openMenu.click()
 
-      homePage.logOutButton.click()
+      homePage.logOut.click()
 
     });
 
@@ -30,11 +30,11 @@ describe("Test Log in/out)", () => {
 
       loginPage.loginUser2()
 
-      homePage.logInButton.click()
+      homePage.logIn.click()
 
       homePage.openMenu.click()
       
-      homePage.logOutButton.click()
+      homePage.logOut.click()
      
     });
   });

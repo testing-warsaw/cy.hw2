@@ -1,9 +1,9 @@
 export class HomePage {
-    get logInButton() {
+    get logIn() {
         return cy.contains('button','Log in')
 
     }
-    get logOutButton() {
+    get logOut() {
         return cy.contains('button','Log out')
 
     }
