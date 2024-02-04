@@ -1,14 +1,20 @@
 export class HomePage {
-    get logIn() {
-        return cy.contains('button','Log in')
-
-    }
-    get logOut() {
+    
+    get btnLogout() {
         return cy.contains('button','Log out')
-
     }
-    get openMenu() {
+    get btnMenu() {
         return cy.get('button#open-navigation-menu-mobile')
+    }
 
+    clickMenu() {
+        this.btnMenu.click()
+    }
+    clickLogout() {
+        this.btnLogout.click()
+    }
+    logout() {
+        this.clickMenu()
+        this.clickLogout()
     }
 }

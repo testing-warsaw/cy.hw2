@@ -4,15 +4,34 @@ export class LoginPage {
       cy.visit("https://www.edu.goit.global/account/login");
     }
 
-    loginUser1() {
-      cy.login("user888@gmail.com", "1234567890")
+    inputEmail(login) {
+      cy.get("#user_email").type(login)
     }
 
-    loginUser2() {
-      cy.login("testowyqa@qa.team", "QA!automation-1")
+    inputPassword(password) {
+      cy.get("#user_password").type(password)
     }
 
-      }
+    get btnLogin() {
+      return cy.contains('button','Log in')
+  }
+
+  clickLogin() {
+    this.btnLogin.click()
+}
+
+    login(login, password) {
+      this.openLoginPage()
+      this.inputEmail(login)
+      this.inputPassword(password)
+      this.clickLogin()
+      
+    }
+    
+  }
+  
+  
+  
 
 
 
