@@ -1,0 +1,44 @@
+Funkcja: Proces zakupowy w ulubionym sklepie internetowym
+
+Tło:
+  Dane wejściowe:
+    - Użytkownik jest zalogowany na swoje konto w ulubionym sklepie internetowym.
+
+Scenariusz: Wyszukiwanie i zakup produktu
+  Kiedy Użytkownik chce zakupić produkt
+  To Użytkownik otwiera stronę główną sklepu
+
+  Gdy Użytkownik wprowadza nazwę produktu "Smartfon" w pole wyszukiwania
+  I Użytkownik naciska przycisk "Szukaj"
+  To System prezentuje listę wyników pasujących do zapytania
+
+  Gdy Użytkownik wybiera produkt z listy wyników, na przykład "Smartfon XYZ"
+  To System wyświetla stronę produktu
+
+  Gdy Użytkownik dodaje produkt do koszyka
+  To System aktualizuje koszyk zakupowy
+
+  Gdy Użytkownik przechodzi do koszyka
+  To System wyświetla zawartość koszyka zakupowego
+
+  Gdy Użytkownik naciska przycisk "Przejdź do kasy"
+  To System przenosi Użytkownika do procesu zamówienia
+
+  Gdy Użytkownik wprowadza dane dostawy i płatności
+  To System przechodzi do podsumowania zamówienia
+
+  Gdy Użytkownik potwierdza zamówienie
+  To System generuje numer zamówienia
+
+Scenariusz: Walidacja zakupu
+  Gdy Użytkownik sprawdza potwierdzenie zamówienia
+  To System wyświetla potwierdzenie z numerem zamówienia
+
+  Gdy Użytkownik sprawdza historię zamówień w swoim koncie
+  To System prezentuje ostatnie zamówienie zgodne z numerem potwierdzenia
+
+  Gdy Użytkownik sprawdza stan zamówienia, wprowadzając numer zamówienia
+  To System wyświetla aktualny status zamówienia
+
+  Gdy Użytkownik otrzymuje potwierdzenie e-mail
+  To Użytkownik sprawdza e-mail w celu potwierdzenia zamówienia
