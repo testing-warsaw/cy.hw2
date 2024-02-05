@@ -18,7 +18,7 @@ export class LoginPage {
 
   clickLogin() {
     this.btnLogin.click()
-}
+  }
 
     login(login, password) {
       this.openLoginPage()
@@ -28,7 +28,7 @@ export class LoginPage {
       
     }
     
-  }
+}
   
   
   
