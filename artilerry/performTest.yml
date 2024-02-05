@@ -1,0 +1,40 @@
+config:
+  target: 'https://whiskyhunter.net/api'
+  phases:
+    - duration: 300
+      arrivalRate: 10
+
+scenarios:
+  - flow:
+      - get:
+          url: '/whiskies'
+      - post:
+          url: '/purchase'
+          json:
+            userId: '{{ $randomNumber(1, 1000) }}'
+            whiskyId: '{{ $randomNumber(1, 100) }}'
+            quantity: '{{ $randomNumber(1, 10) }}'
+      - get:
+          url: '/user/history'
+  - flow:
+      - post:
+          url: '/another-endpoint'
+          json:
+            data: '{{ $file("./path/to/another-payload.json") }}'
+
+hooks:
+  - beforeRequest:
+      - 'console.log("Starting the test...")'
+  - afterResponse:
+      - 'console.log("Completed one iteration of the test.")'
+
+ensure:
+  - isTrue:
+      expression: 'responseTime.p95 < 2000'
+      message: '95th percentile response time should be less than 2000 ms'
+  - isTrue:
+      expression: 'responseTime.mean < 1000'
+      message: 'Mean response time should be less than 1000 ms'
+  - isTrue:
+      expression: 'counters.errors.rate < 0.5'
+      message: 'Error rate should be less than 0.5%'
