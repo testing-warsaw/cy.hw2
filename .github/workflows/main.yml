@@ -6,6 +6,7 @@ on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,6 +15,25 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
 
-      - name: Cypress run Tests
-        uses: npm run cy:open:chrome 
+      - name: Cypress run 
+        run: npm run cy:open:chrome 
+   
+
+# name: Cypress Tests
+
+# on: push
+
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-22.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#       # Install NPM dependencies, cache them correctly
+#       # and run all Cypress tests
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v6
+
+#       - name: Cypress run Tests
+#         uses: npm run cy:open:chrome 
    
