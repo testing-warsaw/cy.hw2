@@ -1,44 +1,43 @@
-Funkcja: Proces zakupowy w ulubionym sklepie internetowym
+Feature: Proces zakupowy w ulubionym sklepie internetowym
 
-Tło:
-  Dane wejściowe:
-    - Użytkownik jest zalogowany na swoje konto w ulubionym sklepie internetowym.
+  Background:
+    Given Użytkownik jest zalogowany na swoje konto w ulubionym sklepie internetowym.
 
-Scenariusz: Wyszukiwanie i zakup produktu
-  Kiedy Użytkownik chce zakupić produkt
-  To Użytkownik otwiera stronę główną sklepu
+  Scenario: Wyszukiwanie i zakup produktu
+    When Użytkownik chce zakupić produkt
+    Then Użytkownik otwiera stronę główną sklepu
 
-  Gdy Użytkownik wprowadza nazwę produktu "Smartfon" w pole wyszukiwania
-  I Użytkownik naciska przycisk "Szukaj"
-  To System prezentuje listę wyników pasujących do zapytania
+    When Użytkownik wprowadza nazwę produktu "Smartfon" w pole wyszukiwania
+    And Użytkownik naciska przycisk "Szukaj"
+    Then System prezentuje listę wyników pasujących do zapytania
 
-  Gdy Użytkownik wybiera produkt z listy wyników, na przykład "Smartfon XYZ"
-  To System wyświetla stronę produktu
+    When Użytkownik wybiera produkt z listy wyników, na przykład "Smartfon XYZ"
+    Then System wyświetla stronę produktu
 
-  Gdy Użytkownik dodaje produkt do koszyka
-  To System aktualizuje koszyk zakupowy
+    When Użytkownik dodaje produkt do koszyka
+    Then System aktualizuje koszyk zakupowy
 
-  Gdy Użytkownik przechodzi do koszyka
-  To System wyświetla zawartość koszyka zakupowego
+    When Użytkownik przechodzi do koszyka
+    Then System wyświetla zawartość koszyka zakupowego
 
-  Gdy Użytkownik naciska przycisk "Przejdź do kasy"
-  To System przenosi Użytkownika do procesu zamówienia
+    When Użytkownik naciska przycisk "Przejdź do kasy"
+    Then System przenosi Użytkownika do procesu zamówienia
 
-  Gdy Użytkownik wprowadza dane dostawy i płatności
-  To System przechodzi do podsumowania zamówienia
+    When Użytkownik wprowadza dane dostawy i płatności
+    Then System przechodzi do podsumowania zamówienia
 
-  Gdy Użytkownik potwierdza zamówienie
-  To System generuje numer zamówienia
+    When Użytkownik potwierdza zamówienie
+    Then System generuje numer zamówienia
 
-Scenariusz: Walidacja zakupu
-  Gdy Użytkownik sprawdza potwierdzenie zamówienia
-  To System wyświetla potwierdzenie z numerem zamówienia
+  Scenario: Walidacja zakupu
+    When Użytkownik sprawdza potwierdzenie zamówienia
+    Then System wyświetla potwierdzenie z numerem zamówienia
 
-  Gdy Użytkownik sprawdza historię zamówień w swoim koncie
-  To System prezentuje ostatnie zamówienie zgodne z numerem potwierdzenia
+    When Użytkownik sprawdza historię zamówień w swoim koncie
+    Then System prezentuje ostatnie zamówienie zgodne z numerem potwierdzenia
 
-  Gdy Użytkownik sprawdza stan zamówienia, wprowadzając numer zamówienia
-  To System wyświetla aktualny status zamówienia
+    When Użytkownik sprawdza stan zamówienia, wprowadzając numer zamówienia
+    Then System wyświetla aktualny status zamówienia
 
-  Gdy Użytkownik otrzymuje potwierdzenie e-mail
-  To Użytkownik sprawdza e-mail w celu potwierdzenia zamówienia
+    When Użytkownik otrzymuje potwierdzenie e-mail
+    Then Użytkownik sprawdza e-mail w celu potwierdzenia zamówienia
